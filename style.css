@@ -1,0 +1,153 @@
+:root {
+    /* Define los colores de tu marca aquí */
+    --primary-color: #27ae60; /* Un verde corporativo y moderno */
+    --secondary-color: #f8f9fa; /* Un gris muy claro para el fondo */
+    --text-color: #34495e;
+    --sidebar-bg: #2c3e50; /* Un azul oscuro para la sidebar */
+    --sidebar-text: #ecf0f1;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ===== Sidebar de la Empresa ===== */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 40px;
+    width: 35%;
+    min-width: 320px;
+}
+
+.company-profile img {
+    width: 120px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.company-profile h1 {
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    font-size: 2em;
+}
+
+.company-profile p {
+    text-align: center;
+    color: var(--sidebar-text);
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-info h3, .core-services h3 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-info p { margin: 10px 0; }
+.contact-info i { margin-right: 10px; width: 20px; text-align: center; }
+.contact-info a { color: var(--sidebar-text); text-decoration: none; transition: color 0.3s; }
+.contact-info a:hover { color: var(--primary-color); }
+
+.core-services ul { list-style: none; padding: 0; }
+.core-services li {
+    margin-bottom: 10px;
+    padding-left: 1.2em;
+    position: relative;
+}
+.core-services li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+/* ===== Contenido Principal de la Empresa ===== */
+.main-content {
+    padding: 40px;
+    width: 65%;
+}
+
+.main-content section { margin-bottom: 40px; }
+.main-content h2 {
+    color: #333;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.project a, .service-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+.project a:hover, .service-item a:hover { text-decoration: underline; }
+
+/* Call to Action (Llamada a la acción) */
+#cta {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+
+img{
+    border: solid 1px;
+    border-radius: 50px;
+}
+.cta-button:hover {
+    background-color: #218c50; /* Un verde un poco más oscuro */
+}
+
+/* ===== Responsividad para móviles ===== */
+@media (max-width: 768px) {
+    .container { flex-direction: column; margin: 0; border-radius: 0; }
+    .sidebar, .main-content { width: 100%; min-width: unset; padding: 25px; }
+}
+
+/* ===== CSS para el efecto Fade-in on Scroll ===== */
+
+/* Clase para ocultar los elementos inicialmente */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px); /* Ligeramente desplazado hacia abajo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Clase que se añadirá con JavaScript para mostrar los elementos */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
